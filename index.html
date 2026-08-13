@@ -18,66 +18,19 @@
             --text-muted: #64748B;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-soft); color: var(--text-dark); font-family: 'Inter', sans-serif; line-height: 1.6; }
 
-        body {
-            background-color: var(--bg-soft);
-            color: var(--text-dark);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-        }
+        header { background: var(--primary); color: white; padding: 3.5rem 1.5rem; text-align: center; }
+        header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        header p { color: #94A3B8; font-size: 1.1rem; max-width: 650px; margin: 0 auto; }
 
-        header {
-            background: var(--primary);
-            color: white;
-            padding: 3.5rem 1.5rem;
-            text-align: center;
-        }
+        .container { max-width: 960px; margin: 0 auto; padding: 2.5rem 1rem; }
 
-        header h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
+        .section-header { margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.6rem; }
+        .section-title { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
 
-        header p {
-            color: #94A3B8;
-            font-size: 1.1rem;
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 2.5rem 1rem;
-        }
-
-        .section-header {
-            margin-bottom: 1.8rem;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0.6rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .section-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3.5rem;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
 
         .card {
             background: var(--card-bg);
@@ -91,10 +44,7 @@
             justify-content: space-between;
         }
 
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
 
         .badge {
             display: inline-block;
@@ -108,44 +58,15 @@
             width: fit-content;
         }
 
-        .badge-consulting {
-            background: #F0FDF4;
-            color: #16A34A;
-        }
+        .badge-consulting { background: #F0FDF4; color: #16A34A; }
 
-        .card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
+        .card h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark); }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; }
 
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.2rem;
-        }
+        .read-more { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; align-self: flex-start; }
+        .read-more:hover { text-decoration: underline; }
 
-        .read-more {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            align-self: flex-start;
-        }
-
-        .read-more:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border);
-            margin-top: 2rem;
-        }
+        footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 2rem; }
     </style>
 </head>
 <body>
@@ -163,25 +84,23 @@
         </div>
 
         <div class="grid">
-
             <div class="card">
                 <div>
                     <span class="badge">Power Platform & Portals</span>
-                    <h3>Configuring Custom Portal Forms and Automated Approval Pipelines</h3>
-                    <p>Key technical configurations, form rules, and automated workflow triggers when building portal solutions.</p>
+                    <h3>Configuring Custom Portal Forms & Automated Approval Pipelines</h3>
+                    <p>Key technical configurations, field validations, and automated workflow triggers when building portal solutions.</p>
                 </div>
-                <a href="portal-workflows.html" class="read-more">Read Breakdown →</a>
+                <a href="portal-workflows.html" class="read-more">Read Full Article →</a>
             </div>
 
             <div class="card">
                 <div>
-                    <span class="badge">System Integration</span>
-                    <h3>Troubleshooting System Tickets & Root Cause Analysis</h3>
-                    <p>A systematic technical checklist for diagnosing platform errors, system logs, and integration issues.</p>
+                    <span class="badge">Troubleshooting</span>
+                    <h3>A Systematic Framework for System Ticket Root Cause Analysis</h3>
+                    <p>A step-by-step triage workflow for reproducing bugs, checking security roles, and analyzing server logs.</p>
                 </div>
-                <a href="ticket-troubleshooting.html" class="read-more">Read Breakdown →</a>
+                <a href="ticket-troubleshooting.html" class="read-more">Read Full Article →</a>
             </div>
-
         </div>
 
 
@@ -191,25 +110,23 @@
         </div>
 
         <div class="grid">
-
             <div class="card">
                 <div>
                     <span class="badge badge-consulting">Requirements Gathering</span>
                     <h3>Translating Ambiguous Business Needs into Technical Specs</h3>
-                    <p>How to run effective stakeholder workshops, ask diagnostic discovery questions, and prevent scope creep.</p>
+                    <p>Diagnostic discovery questions to ask in workshops to uncover true business pain points and scope boundaries.</p>
                 </div>
-                <a href="requirements-gathering.html" class="read-more">Read Breakdown →</a>
+                <a href="requirements-gathering.html" class="read-more">Read Full Article →</a>
             </div>
 
             <div class="card">
                 <div>
                     <span class="badge badge-consulting">Process Modeling</span>
-                    <h3>Mapping As-Is vs. To-Be Workflows for Stakeholders</h3>
-                    <p>Best practices for designing clean BPMN flowcharts that keep technical and non-technical teams aligned.</p>
+                    <h3>Mapping As-Is vs. To-Be Workflows That Teams Actually Use</h3>
+                    <p>Best practices for swimlane workflow diagrams that align non-technical business leads with technical engineers.</p>
                 </div>
-                <a href="process-modeling.html" class="read-more">Read Breakdown →</a>
+                <a href="process-modeling.html" class="read-more">Read Full Article →</a>
             </div>
-
         </div>
 
     </div>

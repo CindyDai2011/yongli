@@ -11,29 +11,14 @@
         :root {
             --primary: #0F172A;
             --bg-page: #F8FAFC;
-            --card-bg: #FFFFFF;
-            --border-light: #E2E8F0;
             --text-dark: #0F172A;
             --text-muted: #64748B;
-            
-            /* Section Specific Colors */
-            --tech-color: #2563EB;
-            --tech-bg: #EFF6FF;
-            
-            --consulting-color: #059669;
-            --consulting-bg: #ECFDF5;
-            
-            --contact-color: #4F46E5;
-            --contact-bg: #EEF2FF;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
-            background: radial-gradient(circle at 10% 20%, rgba(219, 234, 254, 0.4) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(209, 250, 229, 0.35) 0%, transparent 40%),
-                        #F8FAFC;
-            background-attachment: fixed;
+            background-color: var(--bg-page);
             color: var(--text-dark); 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             line-height: 1.7; 
@@ -93,7 +78,6 @@
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.25rem;
-            backdrop-filter: blur(6px);
         }
 
         .status-dot {
@@ -119,7 +103,6 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 1.25rem;
-            letter-spacing: -0.01em;
         }
 
         header p.bio { 
@@ -151,37 +134,33 @@
             box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
         }
 
-        /* Layout Container */
-        .container { max-width: 840px; margin: 0 auto; padding: 3.5rem 1.25rem; }
+        /* Container */
+        .container { max-width: 860px; margin: 0 auto; padding: 3rem 1.25rem; }
 
-        .section-header { 
-            margin-bottom: 2rem; 
-            padding-bottom: 0.75rem; 
+        .section-wrapper {
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 3.5rem;
+            border: 1px solid transparent;
         }
 
         .section-title { 
-            font-size: 1.55rem; 
+            font-size: 1.6rem; 
             font-weight: 800; 
             letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
+            margin-bottom: 1.75rem;
         }
 
         .article-list {
             display: flex;
             flex-direction: column;
-            gap: 1.75rem;
-            margin-bottom: 4rem;
+            gap: 1.5rem;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 18px;
+            border-radius: 16px;
             padding: 2rem;
-            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.25s ease;
         }
 
         .title-link { text-decoration: none; color: var(--text-dark); display: block; }
@@ -191,12 +170,10 @@
             font-weight: 700; 
             margin-bottom: 0.65rem; 
             color: var(--text-dark);
-            transition: color 0.2s ease;
             line-height: 1.4;
-            letter-spacing: -0.01em;
         }
 
-        .card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.35rem; line-height: 1.65; }
+        .card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.25rem; }
 
         .read-more { 
             text-decoration: none; 
@@ -216,65 +193,75 @@
             padding: 0.35rem 0.85rem;
             border-radius: 30px;
             margin-bottom: 0.9rem;
-            letter-spacing: 0.01em;
         }
 
 
         /* ========================================== */
-        /* SECTION 1 COLOR THEME: BLUE (TECHNICAL)     */
+        /* SECTION 1: BLUE THEME (TECHNICAL)          */
         /* ========================================== */
-        .section-tech .section-title { color: var(--tech-color); }
-        .section-tech { border-bottom: 2.5 solid var(--tech-color); }
-        .card-tech { border: 1px solid rgba(37, 99, 235, 0.2); }
-        .card-tech:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.12); 
-            border-color: var(--tech-color);
+        .wrapper-tech {
+            background-color: #F0F7FF;
+            border-color: #BFDBFE;
         }
-        .card-tech:hover h3 { color: var(--tech-color); }
-        .badge-tech { background: var(--tech-bg); color: var(--tech-color); }
-        .read-more-tech { color: var(--tech-color); }
-
-
-        /* ========================================== */
-        /* SECTION 2 COLOR THEME: GREEN (CONSULTING)  */
-        /* ========================================== */
-        .section-consulting .section-title { color: var(--consulting-color); }
-        .section-consulting { border-bottom: 2.5px solid var(--consulting-color); }
-        .card-consulting { border: 1px solid rgba(5, 150, 105, 0.2); }
-        .card-consulting:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 20px 35px -10px rgba(5, 150, 105, 0.12); 
-            border-color: var(--consulting-color);
+        .wrapper-tech .section-title { color: #1E40AF; }
+        .card-tech {
+            background: #FFFFFF;
+            border: 1px solid #DBEAFE;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.04);
         }
-        .card-consulting:hover h3 { color: var(--consulting-color); }
-        .badge-consulting { background: var(--consulting-bg); color: var(--consulting-color); }
-        .read-more-consulting { color: var(--consulting-color); }
+        .card-tech:hover {
+            transform: translateY(-3px);
+            border-color: #2563EB;
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.12);
+        }
+        .card-tech:hover h3 { color: #2563EB; }
+        .badge-tech { background: #EFF6FF; color: #2563EB; }
+        .read-more-tech { color: #2563EB; }
 
 
         /* ========================================== */
-        /* SECTION 3 COLOR THEME: INDIGO (CONTACT)   */
+        /* SECTION 2: GREEN THEME (CONSULTING)        */
+        /* ========================================== */
+        .wrapper-consulting {
+            background-color: #F0FDF4;
+            border-color: #BBF7D0;
+        }
+        .wrapper-consulting .section-title { color: #065F46; }
+        .card-consulting {
+            background: #FFFFFF;
+            border: 1px solid #DCFCE7;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.04);
+        }
+        .card-consulting:hover {
+            transform: translateY(-3px);
+            border-color: #059669;
+            box-shadow: 0 12px 24px rgba(5, 150, 105, 0.12);
+        }
+        .card-consulting:hover h3 { color: #059669; }
+        .badge-consulting { background: #ECFDF5; color: #059669; }
+        .read-more-consulting { color: #059669; }
+
+
+        /* ========================================== */
+        /* SECTION 3: INDIGO THEME (CONTACT BANNER)   */
         /* ========================================== */
         .contact-box {
-            background: linear-gradient(135deg, #FFFFFF 0%, #EEF2FF 100%);
-            border: 2px solid rgba(79, 70, 229, 0.25);
+            background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+            border: 2px solid #C7D2FE;
             border-radius: 24px;
             padding: 3.5rem 2rem;
             text-align: center;
-            margin-top: 2rem;
-            box-shadow: 0 16px 32px -8px rgba(79, 70, 229, 0.08);
         }
 
         .contact-box h3 {
             font-size: 1.75rem;
             font-weight: 800;
-            color: var(--contact-color);
+            color: #3730A3;
             margin-bottom: 0.65rem;
-            letter-spacing: -0.02em;
         }
 
         .contact-box p {
-            color: var(--text-muted);
+            color: #4C1D95;
             margin-bottom: 1.75rem;
             font-size: 1.05rem;
             max-width: 580px;
@@ -283,7 +270,7 @@
         }
 
         .cta-btn-contact {
-            background: var(--contact-color);
+            background: #4F46E5;
             box-shadow: 0 4px 16px rgba(79, 70, 229, 0.3);
         }
 
@@ -298,8 +285,8 @@
             padding: 2.5rem 1rem; 
             color: var(--text-muted); 
             font-size: 0.9rem; 
-            border-top: 1px solid var(--border-light); 
-            margin-top: 4rem; 
+            border-top: 1px solid #E2E8F0; 
+            margin-top: 3rem; 
         }
     </style>
 </head>
@@ -320,66 +307,66 @@
 
     <div class="container">
 
-        <!-- SECTION 1: TECHNICAL SHARING (BLUE THEME) -->
-        <div class="section-header section-tech">
+        <!-- SECTION 1: TECHNICAL SHARING (BLUE SECTION BLOCK) -->
+        <div class="section-wrapper wrapper-tech">
             <h2 class="section-title">🛠️ Technical Insights & Solutions</h2>
+
+            <div class="article-list">
+                
+                <!-- Article 1 -->
+                <div class="card card-tech">
+                    <span class="badge badge-tech">Power Platform & Portals</span>
+                    <a href="portal-workflows.html" class="title-link">
+                        <h3>Configuring Custom Portal Forms & Automated Approval Pipelines</h3>
+                    </a>
+                    <p>Key technical configurations, field validations, and automated workflow triggers when building portal solutions.</p>
+                    <a href="portal-workflows.html" class="read-more read-more-tech">Read Solution →</a>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="card card-tech">
+                    <span class="badge badge-tech">Dynamics 365 & Troubleshooting</span>
+                    <a href="ticket-troubleshooting.html" class="title-link">
+                        <h3>A Systematic Framework for System Ticket Root Cause Analysis</h3>
+                    </a>
+                    <p>A step-by-step triage workflow for reproducing bugs, checking security roles, and analyzing server logs.</p>
+                    <a href="ticket-troubleshooting.html" class="read-more read-more-tech">Read Solution →</a>
+                </div>
+
+            </div>
         </div>
 
-        <div class="article-list">
-            
-            <!-- Article 1 -->
-            <div class="card card-tech">
-                <span class="badge badge-tech">Power Platform & Portals</span>
-                <a href="portal-workflows.html" class="title-link">
-                    <h3>Configuring Custom Portal Forms & Automated Approval Pipelines</h3>
-                </a>
-                <p>Key technical configurations, field validations, and automated workflow triggers when building portal solutions.</p>
-                <a href="portal-workflows.html" class="read-more read-more-tech">Read Solution →</a>
-            </div>
 
-            <!-- Article 2 -->
-            <div class="card card-tech">
-                <span class="badge badge-tech">Dynamics 365 & Troubleshooting</span>
-                <a href="ticket-troubleshooting.html" class="title-link">
-                    <h3>A Systematic Framework for System Ticket Root Cause Analysis</h3>
-                </a>
-                <p>A step-by-step triage workflow for reproducing bugs, checking security roles, and analyzing server logs.</p>
-                <a href="ticket-troubleshooting.html" class="read-more read-more-tech">Read Solution →</a>
-            </div>
-
-        </div>
-
-
-        <!-- SECTION 2: CONSULTING & ANALYSIS (GREEN THEME) -->
-        <div class="section-header section-consulting">
+        <!-- SECTION 2: CONSULTING & ANALYSIS (GREEN SECTION BLOCK) -->
+        <div class="section-wrapper wrapper-consulting">
             <h2 class="section-title">💼 Consulting & Business Analysis</h2>
+
+            <div class="article-list">
+
+                <!-- Article 3 -->
+                <div class="card card-consulting">
+                    <span class="badge badge-consulting">Requirements Gathering</span>
+                    <a href="requirements-gathering.html" class="title-link">
+                        <h3>Translating Ambiguous Business Needs into Technical Specs</h3>
+                    </a>
+                    <p>Diagnostic discovery questions to ask in workshops to uncover true business pain points and scope boundaries.</p>
+                    <a href="requirements-gathering.html" class="read-more read-more-consulting">Read Solution →</a>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="card card-consulting">
+                    <span class="badge badge-consulting">Process Modeling</span>
+                    <a href="process-modeling.html" class="title-link">
+                        <h3>Mapping As-Is vs. To-Be Workflows That Teams Actually Use</h3>
+                    </a>
+                    <p>Best practices for swimlane workflow diagrams that align non-technical business leads with technical engineers.</p>
+                    <a href="process-modeling.html" class="read-more read-more-consulting">Read Solution →</a>
+                </div>
+
+            </div>
         </div>
 
-        <div class="article-list">
-
-            <!-- Article 3 -->
-            <div class="card card-consulting">
-                <span class="badge badge-consulting">Requirements Gathering</span>
-                <a href="requirements-gathering.html" class="title-link">
-                    <h3>Translating Ambiguous Business Needs into Technical Specs</h3>
-                </a>
-                <p>Diagnostic discovery questions to ask in workshops to uncover true business pain points and scope boundaries.</p>
-                <a href="requirements-gathering.html" class="read-more read-more-consulting">Read Solution →</a>
-            </div>
-
-            <!-- Article 4 -->
-            <div class="card card-consulting">
-                <span class="badge badge-consulting">Process Modeling</span>
-                <a href="process-modeling.html" class="title-link">
-                    <h3>Mapping As-Is vs. To-Be Workflows That Teams Actually Use</h3>
-                </a>
-                <p>Best practices for swimlane workflow diagrams that align non-technical business leads with technical engineers.</p>
-                <a href="process-modeling.html" class="read-more read-more-consulting">Read Solution →</a>
-            </div>
-
-        </div>
-
-        <!-- FREELANCE CONTACT BANNER (INDIGO THEME) -->
+        <!-- FREELANCE CONTACT BANNER (INDIGO SECTION BLOCK) -->
         <div class="contact-box">
             <h3>Need Help With Power Platform or Dynamics 365?</h3>
             <p>I am available for freelance implementation, custom portal development, process automation, and system troubleshooting.</p>

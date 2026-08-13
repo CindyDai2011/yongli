@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Systems Analyst Field Notes ⚙️</title>
+    <title>Yong Li | Power Platform & Dynamics 365 Consultant</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1E293B;
+            --primary: #0F172A;
             --accent: #2563EB;
+            --accent-hover: #1D4ED8;
             --bg-soft: #F8FAFC;
             --card-bg: #FFFFFF;
             --border: #E2E8F0;
@@ -21,14 +22,99 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background-color: var(--bg-soft); color: var(--text-dark); font-family: 'Inter', sans-serif; line-height: 1.6; }
 
-        header { background: var(--primary); color: white; padding: 3.5rem 1.5rem; text-align: center; }
-        header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
-        header p { color: #94A3B8; font-size: 1.1rem; max-width: 650px; margin: 0 auto; }
+        /* Header Styling */
+        header { 
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); 
+            color: white; 
+            padding: 4rem 1.5rem 3.5rem 1.5rem; 
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+        }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 2.5rem 1rem; }
+        .avatar-badge {
+            width: 72px;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.2rem auto;
+            backdrop-filter: blur(4px);
+        }
 
-        .section-header { margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.6rem; }
-        .section-title { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
+        .freelance-status {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ADE80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .author-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+        }
+
+        .author-title {
+            color: #60A5FA;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        header p.bio { 
+            color: #94A3B8; 
+            font-size: 1.05rem; 
+            max-width: 640px; 
+            margin: 0 auto 1.5rem auto; 
+            line-height: 1.6;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container { max-width: 800px; margin: 0 auto; padding: 3rem 1.25rem; }
+
+        .section-header { 
+            margin-bottom: 1.8rem; 
+            border-bottom: 2px solid var(--border); 
+            padding-bottom: 0.6rem; 
+        }
+        
+        .section-title { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
         /* Vertical Article List Layout */
         .article-list {
@@ -41,22 +127,26 @@
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 1.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s ease-in-out;
         }
 
-        .card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08); }
+        .card:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08); 
+            border-color: #CBD5E1;
+        }
 
         .badge {
             display: inline-block;
             background: #EFF6FF;
             color: var(--accent);
-            font-size: 0.8rem;
+            font-size: 0.825rem;
             font-weight: 600;
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
             margin-bottom: 0.8rem;
         }
 
@@ -70,11 +160,12 @@
         }
 
         .card h3 { 
-            font-size: 1.3rem; 
+            font-size: 1.25rem; 
             font-weight: 700; 
             margin-bottom: 0.6rem; 
             color: var(--text-dark);
             transition: color 0.2s ease;
+            line-height: 1.4;
         }
 
         .card:hover h3, .title-link:hover h3 { 
@@ -83,24 +174,83 @@
 
         .card p { color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.2rem; }
 
-        .read-more { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-        .read-more:hover { text-decoration: underline; }
+        .read-more { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: gap 0.2s ease;
+        }
+        
+        .read-more:hover { 
+            color: var(--accent-hover);
+            gap: 0.4rem;
+        }
 
-        footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+        /* Freelance Banner Section */
+        .contact-box {
+            background: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin-top: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-box h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+
+        .email-link {
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer { 
+            text-align: center; 
+            padding: 2.5rem 1rem; 
+            color: var(--text-muted); 
+            font-size: 0.9rem; 
+            border-top: 1px solid var(--border); 
+            margin-top: 3rem; 
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Business Systems Analyst Field Notes ⚙️</h1>
-        <p>Insights on enterprise system configurations, requirements engineering, process modeling, and IT consulting.</p>
+        <div class="avatar-badge">👩‍💻</div>
+        <div class="freelance-status">🟢 Available for Freelance & Consulting</div>
+        <h1 class="author-name">Yong Li</h1>
+        <div class="author-title">Freelance Power Platform & Dynamics 365 Specialist</div>
+        <p class="bio">Helping businesses automate processes, build custom Power Apps & Portals, optimize Dynamics 365 workflows, and solve complex enterprise system tickets.</p>
+        <a href="mailto:daiyongli2017@gmail.com" class="cta-btn">✉️ Work With Me</a>
     </header>
 
     <div class="container">
 
         <!-- SECTION 1: TECHNICAL SHARING -->
         <div class="section-header">
-            <h2 class="section-title">🛠️ Technical Sharing</h2>
+            <h2 class="section-title">🛠️ Technical Insights & Solutions</h2>
         </div>
 
         <div class="article-list">
@@ -112,17 +262,17 @@
                     <h3>Configuring Custom Portal Forms & Automated Approval Pipelines</h3>
                 </a>
                 <p>Key technical configurations, field validations, and automated workflow triggers when building portal solutions.</p>
-                <a href="portal-workflows.html" class="read-more">Read Full Article →</a>
+                <a href="portal-workflows.html" class="read-more">Read Solution →</a>
             </div>
 
             <!-- Article 2 -->
             <div class="card">
-                <span class="badge">Troubleshooting</span>
+                <span class="badge">Dynamics 365 & Troubleshooting</span>
                 <a href="ticket-troubleshooting.html" class="title-link">
                     <h3>A Systematic Framework for System Ticket Root Cause Analysis</h3>
                 </a>
                 <p>A step-by-step triage workflow for reproducing bugs, checking security roles, and analyzing server logs.</p>
-                <a href="ticket-troubleshooting.html" class="read-more">Read Full Article →</a>
+                <a href="ticket-troubleshooting.html" class="read-more">Read Solution →</a>
             </div>
 
         </div>
@@ -130,7 +280,7 @@
 
         <!-- SECTION 2: CONSULTING & ANALYSIS -->
         <div class="section-header">
-            <h2 class="section-title">💼 Consulting & Analysis</h2>
+            <h2 class="section-title">💼 Consulting & Business Analysis</h2>
         </div>
 
         <div class="article-list">
@@ -142,7 +292,7 @@
                     <h3>Translating Ambiguous Business Needs into Technical Specs</h3>
                 </a>
                 <p>Diagnostic discovery questions to ask in workshops to uncover true business pain points and scope boundaries.</p>
-                <a href="requirements-gathering.html" class="read-more">Read Full Article →</a>
+                <a href="requirements-gathering.html" class="read-more">Read Solution →</a>
             </div>
 
             <!-- Article 4 -->
@@ -152,15 +302,22 @@
                     <h3>Mapping As-Is vs. To-Be Workflows That Teams Actually Use</h3>
                 </a>
                 <p>Best practices for swimlane workflow diagrams that align non-technical business leads with technical engineers.</p>
-                <a href="process-modeling.html" class="read-more">Read Full Article →</a>
+                <a href="process-modeling.html" class="read-more">Read Solution →</a>
             </div>
 
+        </div>
+
+        <!-- FREELANCE CONTACT BANNER -->
+        <div class="contact-box">
+            <h3>Need Help With Power Platform or Dynamics 365?</h3>
+            <p>I am available for freelance implementation, custom portal development, process automation, and system troubleshooting.</p>
+            <a href="mailto:daiyongli2017@gmail.com" class="cta-btn">Get In Touch: daiyongli2017@gmail.com</a>
         </div>
 
     </div>
 
     <footer>
-        <p>© Business Systems & Analysis Field Notes • Built with GitHub Pages</p>
+        <p>© Yong Li • Power Platform & Dynamics 365 Freelance Consulting</p>
     </footer>
 
 </body>

@@ -25,26 +25,29 @@
         header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
         header p { color: #94A3B8; font-size: 1.1rem; max-width: 650px; margin: 0 auto; }
 
-        .container { max-width: 960px; margin: 0 auto; padding: 2.5rem 1rem; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2.5rem 1rem; }
 
         .section-header { margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.6rem; }
         .section-title { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        /* Vertical Article List Layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
 
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
-        .card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08); }
 
         .badge {
             display: inline-block;
@@ -55,15 +58,32 @@
             padding: 0.25rem 0.6rem;
             border-radius: 6px;
             margin-bottom: 0.8rem;
-            width: fit-content;
         }
 
         .badge-consulting { background: #F0FDF4; color: #16A34A; }
 
-        .card h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark); }
-        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; }
+        /* Clickable Title Styling */
+        .title-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            display: block;
+        }
 
-        .read-more { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; align-self: flex-start; }
+        .card h3 { 
+            font-size: 1.3rem; 
+            font-weight: 700; 
+            margin-bottom: 0.6rem; 
+            color: var(--text-dark);
+            transition: color 0.2s ease;
+        }
+
+        .card:hover h3, .title-link:hover h3 { 
+            color: var(--accent); 
+        }
+
+        .card p { color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.2rem; }
+
+        .read-more { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
         .read-more:hover { text-decoration: underline; }
 
         footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 2rem; }
@@ -83,24 +103,28 @@
             <h2 class="section-title">🛠️ Technical Sharing</h2>
         </div>
 
-        <div class="grid">
+        <div class="article-list">
+            
+            <!-- Article 1 -->
             <div class="card">
-                <div>
-                    <span class="badge">Power Platform & Portals</span>
+                <span class="badge">Power Platform & Portals</span>
+                <a href="portal-workflows.html" class="title-link">
                     <h3>Configuring Custom Portal Forms & Automated Approval Pipelines</h3>
-                    <p>Key technical configurations, field validations, and automated workflow triggers when building portal solutions.</p>
-                </div>
+                </a>
+                <p>Key technical configurations, field validations, and automated workflow triggers when building portal solutions.</p>
                 <a href="portal-workflows.html" class="read-more">Read Full Article →</a>
             </div>
 
+            <!-- Article 2 -->
             <div class="card">
-                <div>
-                    <span class="badge">Troubleshooting</span>
+                <span class="badge">Troubleshooting</span>
+                <a href="ticket-troubleshooting.html" class="title-link">
                     <h3>A Systematic Framework for System Ticket Root Cause Analysis</h3>
-                    <p>A step-by-step triage workflow for reproducing bugs, checking security roles, and analyzing server logs.</p>
-                </div>
+                </a>
+                <p>A step-by-step triage workflow for reproducing bugs, checking security roles, and analyzing server logs.</p>
                 <a href="ticket-troubleshooting.html" class="read-more">Read Full Article →</a>
             </div>
+
         </div>
 
 
@@ -109,24 +133,28 @@
             <h2 class="section-title">💼 Consulting & Analysis</h2>
         </div>
 
-        <div class="grid">
+        <div class="article-list">
+
+            <!-- Article 3 -->
             <div class="card">
-                <div>
-                    <span class="badge badge-consulting">Requirements Gathering</span>
+                <span class="badge badge-consulting">Requirements Gathering</span>
+                <a href="requirements-gathering.html" class="title-link">
                     <h3>Translating Ambiguous Business Needs into Technical Specs</h3>
-                    <p>Diagnostic discovery questions to ask in workshops to uncover true business pain points and scope boundaries.</p>
-                </div>
+                </a>
+                <p>Diagnostic discovery questions to ask in workshops to uncover true business pain points and scope boundaries.</p>
                 <a href="requirements-gathering.html" class="read-more">Read Full Article →</a>
             </div>
 
+            <!-- Article 4 -->
             <div class="card">
-                <div>
-                    <span class="badge badge-consulting">Process Modeling</span>
+                <span class="badge badge-consulting">Process Modeling</span>
+                <a href="process-modeling.html" class="title-link">
                     <h3>Mapping As-Is vs. To-Be Workflows That Teams Actually Use</h3>
-                    <p>Best practices for swimlane workflow diagrams that align non-technical business leads with technical engineers.</p>
-                </div>
+                </a>
+                <p>Best practices for swimlane workflow diagrams that align non-technical business leads with technical engineers.</p>
                 <a href="process-modeling.html" class="read-more">Read Full Article →</a>
             </div>
+
         </div>
 
     </div>

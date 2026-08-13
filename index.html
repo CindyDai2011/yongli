@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Systems & Analysis Insights 💼⚙️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E293B;
+            --accent: #2563EB;
+            --bg-soft: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --border: #E2E8F0;
+            --text-dark: #0F172A;
+            --text-muted: #64748B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-soft);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #94A3B8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #EFF6FF;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The Business Systems Analyst Field Notes ⚙️</h1>
+        <p>Real-world lessons on requirements gathering, process modeling, system configuration, and bridging business needs with technology.</p>
+    </header>
+
+    <div class="container">
+
+        <h2 class="section-title">Latest Articles & Case Studies</h2>
+
+        <div class="grid">
+
+            <!-- Article 1 -->
+            <div class="card">
+                <span class="badge">Requirements & Governance</span>
+                <h3>Translating Ambiguous Business Needs into Clear Functional Specifications</h3>
+                <p>How to ask the right questions during stakeholder discovery workshops to avoid scope creep and missed constraints.</p>
+                <a href="#" class="read-more">Read Breakdown →</a>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="card">
+                <span class="badge">Power Platform & Portals</span>
+                <h3>Optimizing Portal Forms and Approval Workflows</h3>
+                <p>Key architectural considerations when configuring custom forms, ticketing pipelines, and automated notifications.</p>
+                <a href="#" class="read-more">Read Breakdown →</a>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="card">
+                <span class="badge">Process Modeling</span>
+                <h3>Mapping As-Is vs. To-Be Workflows That Stakeholders Actually Understand</h3>
+                <p>Best practices for designing BPMN process diagrams that remain clear without over-complicating technical steps.</p>
+                <a href="#" class="read-more">Read Breakdown →</a>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="card">
+                <span class="badge">System Integration</span>
+                <h3>Managing System Ticket Escalations & Root Cause Analysis</h3>
+                <p>A systematic framework for diagnosing complex enterprise tickets, logging platform bugs, and communicating fixes.</p>
+                <a href="#" class="read-more">Read Breakdown →</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© Business Systems & Analysis Field Notes • Built with GitHub Pages</p>
+    </footer>
+
+</body>
+</html>

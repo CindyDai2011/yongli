@@ -125,7 +125,7 @@
             box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
         }
 
-        /* NAVIGATION BAR (4 BUTTONS) */
+        /* NAVIGATION BAR */
         .nav-bar-container {
             position: sticky;
             top: 0;
@@ -142,7 +142,7 @@
             justify-content: center;
             align-items: center;
             gap: 0.75rem;
-            max-width: 840px;
+            max-width: 1100px;
             margin: 0 auto;
             flex-wrap: wrap;
         }
@@ -178,8 +178,8 @@
             background: #1D4ED8;
         }
 
-        /* Container */
-        .container { max-width: 840px; margin: 0 auto; padding: 3rem 1.25rem; }
+        /* Expanded Container to fit parallel grid */
+        .container { max-width: 1100px; margin: 0 auto; padding: 3rem 1.25rem; }
 
         .section-header { 
             margin-bottom: 1.75rem; 
@@ -194,9 +194,10 @@
             color: var(--primary);
         }
 
+        /* PARALLEL GRID LAYOUT */
         .article-list {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.75rem;
             margin-bottom: 4rem;
         }
@@ -207,6 +208,9 @@
             padding: 2.25rem;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
@@ -217,7 +221,7 @@
         .title-link { text-decoration: none; color: var(--text-dark); display: block; }
 
         .card h3 { 
-            font-size: 1.4rem; 
+            font-size: 1.35rem; 
             font-weight: 800; 
             margin-bottom: 0.75rem; 
             color: var(--text-dark);
@@ -225,7 +229,7 @@
             letter-spacing: -0.01em;
         }
 
-        .card p { color: var(--text-muted); font-size: 1.025rem; margin-bottom: 1.5rem; line-height: 1.65; }
+        .card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.65; }
 
         .read-more { 
             text-decoration: none; 
@@ -235,6 +239,7 @@
             align-items: center;
             gap: 0.3rem;
             transition: all 0.2s ease;
+            align-self: flex-start;
         }
         .read-more:hover { gap: 0.6rem; }
 
@@ -246,6 +251,7 @@
             border-radius: 30px;
             margin-bottom: 1rem;
             letter-spacing: 0.01em;
+            width: fit-content;
         }
 
         /* Distinct Card Background Colors */
@@ -343,7 +349,7 @@
         <a href="mailto:daiyongli2017@gmail.com" class="cta-btn">✉️ Work With Me: daiyongli2017@gmail.com</a>
     </header>
 
-    <!-- NAVIGATION BAR WITH 4 BUTTONS -->
+    <!-- NAVIGATION BAR -->
     <div class="nav-bar-container">
         <div class="nav-buttons">
             <a href="#technical" class="nav-btn">🛠️ Technical Insights</a>
@@ -355,7 +361,7 @@
 
     <div class="container">
 
-        <!-- SECTION 1: TECHNICAL SHARING -->
+        <!-- SECTION 1: TECHNICAL SHARING (PARALLEL CARDS) -->
         <div id="technical" style="scroll-margin-top: 80px;"></div>
         <div class="section-header">
             <h2 class="section-title">🛠️ Technical Insights & Solutions</h2>
@@ -363,30 +369,34 @@
 
         <div class="article-list">
             
-            <!-- Article 1: Blue Background Card -->
+            <!-- Article 1: Blue Card -->
             <div class="card card-blue">
-                <span class="badge badge-blue">Power Platform & Portals</span>
-                <a href="portal-workflows.html" class="title-link">
-                    <h3>Configuring Custom Portal Forms & Automated Approval Pipelines</h3>
-                </a>
-                <p>Key technical configurations, field validations, and automated workflow triggers when building portal solutions.</p>
+                <div>
+                    <span class="badge badge-blue">Power Platform & Portals</span>
+                    <a href="portal-workflows.html" class="title-link">
+                        <h3>Configuring Custom Portal Forms & Automated Approval Pipelines</h3>
+                    </a>
+                    <p>Key technical configurations, field validations, and automated workflow triggers when building portal solutions.</p>
+                </div>
                 <a href="portal-workflows.html" class="read-more read-more-blue">Read Solution →</a>
             </div>
 
-            <!-- Article 2: Purple Background Card -->
+            <!-- Article 2: Purple Card -->
             <div class="card card-purple">
-                <span class="badge badge-purple">Dynamics 365 & Troubleshooting</span>
-                <a href="ticket-troubleshooting.html" class="title-link">
-                    <h3>A Systematic Framework for System Ticket Root Cause Analysis</h3>
-                </a>
-                <p>A step-by-step triage workflow for reproducing bugs, checking security roles, and analyzing server logs.</p>
+                <div>
+                    <span class="badge badge-purple">Dynamics 365 & Troubleshooting</span>
+                    <a href="ticket-troubleshooting.html" class="title-link">
+                        <h3>A Systematic Framework for System Ticket Root Cause Analysis</h3>
+                    </a>
+                    <p>A step-by-step triage workflow for reproducing bugs, checking security roles, and analyzing server logs.</p>
+                </div>
                 <a href="ticket-troubleshooting.html" class="read-more read-more-purple">Read Solution →</a>
             </div>
 
         </div>
 
 
-        <!-- SECTION 2: CONSULTING & ANALYSIS -->
+        <!-- SECTION 2: CONSULTING & ANALYSIS (PARALLEL CARDS) -->
         <div id="consulting" style="scroll-margin-top: 80px;"></div>
         <div class="section-header">
             <h2 class="section-title">💼 Consulting & Business Analysis</h2>
@@ -394,29 +404,33 @@
 
         <div class="article-list">
 
-            <!-- Article 3: Green Background Card -->
+            <!-- Article 3: Green Card -->
             <div class="card card-green">
-                <span class="badge badge-green">Requirements Gathering</span>
-                <a href="requirements-gathering.html" class="title-link">
-                    <h3>Translating Ambiguous Business Needs into Technical Specs</h3>
-                </a>
-                <p>Diagnostic discovery questions to ask in workshops to uncover true business pain points and scope boundaries.</p>
+                <div>
+                    <span class="badge badge-green">Requirements Gathering</span>
+                    <a href="requirements-gathering.html" class="title-link">
+                        <h3>Translating Ambiguous Business Needs into Technical Specs</h3>
+                    </a>
+                    <p>Diagnostic discovery questions to ask in workshops to uncover true business pain points and scope boundaries.</p>
+                </div>
                 <a href="requirements-gathering.html" class="read-more read-more-green">Read Solution →</a>
             </div>
 
-            <!-- Article 4: Amber Background Card -->
+            <!-- Article 4: Amber Card -->
             <div class="card card-amber">
-                <span class="badge badge-amber">Process Modeling</span>
-                <a href="process-modeling.html" class="title-link">
-                    <h3>Mapping As-Is vs. To-Be Workflows That Teams Actually Use</h3>
-                </a>
-                <p>Best practices for swimlane workflow diagrams that align non-technical business leads with technical engineers.</p>
+                <div>
+                    <span class="badge badge-amber">Process Modeling</span>
+                    <a href="process-modeling.html" class="title-link">
+                        <h3>Mapping As-Is vs. To-Be Workflows That Teams Actually Use</h3>
+                    </a>
+                    <p>Best practices for swimlane workflow diagrams that align non-technical business leads with technical engineers.</p>
+                </div>
                 <a href="process-modeling.html" class="read-more read-more-amber">Read Solution →</a>
             </div>
 
         </div>
 
-        <!-- FREELANCE SERVICES & CONTACT BANNER -->
+        <!-- FREELANCE CONTACT BANNER -->
         <div id="services" style="scroll-margin-top: 80px;"></div>
         <div id="contact" style="scroll-margin-top: 80px;"></div>
         <div class="contact-box">
